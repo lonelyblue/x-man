@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>x-man</title>
+<meta http-equiv="pragma" content="no-cache"  />
+<meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+<meta http-equiv="expires" content="Wed,26 Feb 1997 08:21:57 GMT" />
+
+<script src="https://leancloud.cn/scripts/lib/av-0.5.0.min.js"></script>
+<script type="text/javascript">
+	//id:  5i8p4z4et0d5y1d4640nl663upndlh9pi8gra16ixb3cd0ib
+	//key: a46oey3vjmg89bhzddyw5ag2irmd2b7h1dvdilphst4g4hsp
+	AV.initialize("5i8p4z4et0d5y1d4640nl663upndlh9pi8gra16ixb3cd0ib", "a46oey3vjmg89bhzddyw5ag2irmd2b7h1dvdilphst4g4hsp");
+
+	var TestObject = AV.Object.extend("TestObject");
+	var testObject = new TestObject();
+	/*
+	testObject.save({foo: "bar"}, {
+	  success: function(object) {
+	  alert("LeanCloud works!");
+	  }
+	});
+	*/
+
+	var query = new AV.Query(TestObject);
+	//query.equalTo("playerName", "Dan Stemkoski");
+	query.find({
+	  success: function(results) {
+	    alert("Successfully retrieved " + results.length + " scores.");
+	    // Do something with the returned AV.Object values
+	    for (var i = 0; i < results.length; i++) {
+	      var object = results[i];
+	      alert(object.id + ' - ' + object.get('foo'));
+	    }
+	  },
+	  error: function(error) {
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+</script>
+</head>
+<body>
+<h2>X-Man</h2>
+my site.
+</body>
+</html>
