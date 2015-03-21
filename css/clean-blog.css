@@ -229,6 +229,7 @@ hr.small {
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 .post-preview > .post-meta {
   color: #808080;
